@@ -72,7 +72,6 @@ export const deletePedido = createAsyncThunk(
 export const updatePedido = createAsyncThunk(
     "pedido/update",
     async(pedido, thunkAPI) => {
-        console.log(pedido)
         const token = thunkAPI.getState().auth.user.token
         const data = await pedidoService.updatePedido(pedido, token)
         //check for errors

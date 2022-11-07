@@ -71,6 +71,11 @@ const Pedidos = () => {
       destino: email,
       origem: user.email
     }
+
+    let bool = window.confirm('Deseja realmente entrar em contato?')
+    if(!bool){
+      return
+    }
     dispatch(makeContact(data))
     window.alert('E-mail enviado!!!')
   }
@@ -150,14 +155,16 @@ const Pedidos = () => {
             />
           ))}
       </div>
-      <footer className={styles.footer}>
-        <button onClick={handleMines}>
-            <AiOutlineMinus />
-        </button>
-        <button onClick={handlePlus}>
-            <AiOutlinePlus />
-        </button>
-      </footer>
+      {pedidos.length > 50 && (
+        <footer className={styles.footer}>
+          <button onClick={handleMines}>
+              <AiOutlineMinus />
+          </button>
+          <button onClick={handlePlus}>
+              <AiOutlinePlus />
+          </button>
+        </footer>
+      )}
     </div>
   </>
   )

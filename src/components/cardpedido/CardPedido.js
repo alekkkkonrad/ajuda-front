@@ -7,8 +7,6 @@ import { uploads } from '../../utils/config';
 const CardPedido = ({id, email, url, username, local, tipos, desc, contact}) => {
 
     const {auth} = useAuth()
-    
-    console.log(email)
 
     const handleContact = () => {
         contact(email)
